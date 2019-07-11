@@ -21,7 +21,7 @@ class SkytaleTests(unittest.TestCase):
             len("hwaelllto! ")
         )
 
-    def test_even_seq(self):
+    def test_even_seq_encode(self):
         """sequence with diameter 1 should result in the same output"""
         self.assertEqual(
             (skytale_encode("sipgate hacking talents!", 1)),
@@ -32,24 +32,56 @@ class SkytaleTests(unittest.TestCase):
             "seili nephgnga tactstka!"
         )
 
-    def test_odd_seq(self):
+    def test_odd_seq_encode(self):
         """odd sequences shouldn't break the program"""
         self.assertEqual(
             (skytale_encode("hallo welt!", 6)),
             "hwaelllto! "
         )
     
-    def test_null_seq(self):
+    def test_null_seq_encode(self):
         """no input shouldn't break the program"""
         self.assertEqual(
             (skytale_encode("", 6)),
             ""
         )
     
-    def test_numeric_input(self):
+    def test_numeric_input_encode(self):
         """numeric inputs should be treated as strings"""
         self.assertEqual(
             (skytale_encode(2, 6)),
+            "2"
+        )
+
+    def test_even_seq_decode(self):
+        """sequence with diameter 1 should result in the same output"""
+        self.assertEqual(
+            (skytale_decode("sipgate hacking talents!", 1)),
+            "sipgate hacking talents!"
+        )
+        self.assertEqual(
+            (skytale_decode("seili nephgnga tactstka!", 6)),
+            "sipgate hacking talents!"
+        )
+
+    def test_odd_seq_decode(self):
+        """odd sequences shouldn't break the decoding"""
+        self.assertEqual(
+            (skytale_decode("hwaelllto! ", 6)),
+            "hallo welt!"
+        )
+    
+    def test_null_seq_decode(self):
+        """no input shouldn't break the decoding"""
+        self.assertEqual(
+            (skytale_decode("", 6)),
+            ""
+        )
+    
+    def test_numeric_input_decode(self):
+        """numeric inputs should be treated as strings"""
+        self.assertEqual(
+            (skytale_decode(2, 6)),
             "2"
         )
 
