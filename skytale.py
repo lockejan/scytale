@@ -16,7 +16,7 @@ def skytale_decode(input, diameter):
     out = str()
 
     if diameter > 1:
-        diameter = math.ceil(len(input)/2)
+        diameter = math.ceil(len(input)/diameter)
 
     for y in range(0,diameter):
         out += input[y::diameter]
