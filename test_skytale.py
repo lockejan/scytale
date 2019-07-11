@@ -1,5 +1,5 @@
 import unittest
-from skytale import skytale_encode
+from skytale import skytale_encode, skytale_decode
 
 class SkytaleTests(unittest.TestCase):
     def test_equal_io(self):
@@ -10,6 +10,14 @@ class SkytaleTests(unittest.TestCase):
         )
         self.assertEqual(
             len(skytale_encode("hallo welt!", 6)),
+            len("hwaelllto! ")
+        )
+        self.assertEqual(
+            len(skytale_decode("hallo sipgate", 1)),
+            len("hallo sipgate")
+        )
+        self.assertEqual(
+            len(skytale_decode("hallo welt!", 6)),
             len("hwaelllto! ")
         )
 
