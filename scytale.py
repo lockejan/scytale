@@ -1,26 +1,19 @@
 import pyfiglet
 from math import ceil
 
-def scytale_encode(input, diameter):
+def scytale_process(input, diameter):
     input = str(input)
     out = str()
 
     for y in range(0,diameter):
         out += input[y::diameter]
-
     return out
 
-
-def scytale_decode(input, diameter):
+def scytale_init(input, diameter, mode):
     input = str(input)
-    out = str()
-
-    diameter = ceil(len(input)/diameter)
-
-    for y in range(0,diameter):
-        out += input[y::diameter]
-
-    return out
+    if mode == 1:
+        diameter = ceil(len(input)/diameter)
+    return scytale_process(input, diameter)
 
 
 def main_menu(user_input, menu):
@@ -35,20 +28,13 @@ def main_menu(user_input, menu):
         
         if user_input == 2:
             break
-        elif user_input == 0:
+        elif user_input in [0,1]:
             user_string = str(input(f"\nPlease enter a string to be {mode[user_input]}: \n"))
             try:
                 user_diameter = int(input("\nPlease enter a diameter:[2] \n"))
             except:
                 user_diameter = 2
-            print(f"\nYour {mode[user_input]} string:\n" + scytale_encode(user_string, user_diameter) + "\n")
-        else:
-            user_string = str(input(f"\nPlease enter a string to be {mode[user_input]}: \n"))
-            try:
-                user_diameter = int(input("\nPlease enter a diameter:[2] \n"))
-            except:
-                user_diameter = 2
-            print(f"\nYour {mode[user_input]} string:\n" + scytale_decode(user_string, user_diameter) + "\n")
+            print(f"\nYour {mode[user_input]} string:\n" + scytale_init(user_string, user_diameter, user_input) + "\n")
 
 
 def welcome_user():
