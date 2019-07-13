@@ -37,9 +37,13 @@ def main_menu(menu):
         else:
             user_string = str(
                 input(f"\nPlease enter a string to be {mode[user_input]}: \n"))
+            user_diameter = input("\nPlease enter a diameter:[2] \n")
             try:
-                user_diameter = int(input("\nPlease enter a diameter:[2] \n"))
+                user_diameter = int(user_diameter)
             except:
+                if user_input not in ["", "2"]:
+                    print(
+                        f"\n'{user_diameter}' is not a number. Continuing with 2.\n")
                 user_diameter = 2
             print(f"\nYour {mode[user_input]} string:\n '" +
                   scytale_init(user_string, user_diameter, user_input) + "'\n")
