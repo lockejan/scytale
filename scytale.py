@@ -41,14 +41,14 @@ def main_menu(user_input, menu):
                 user_diameter = int(input("\nPlease enter a diameter:[2] \n"))
             except:
                 user_diameter = 2
-            print("\nYour encoded string:\n" + scytale_encode(user_string, user_diameter) + "\n")
+            print(f"\nYour {mode[user_input]} string:\n" + scytale_encode(user_string, user_diameter) + "\n")
         else:
             user_string = str(input(f"\nPlease enter a string to be {mode[user_input]}: \n"))
             try:
                 user_diameter = int(input("\nPlease enter a diameter:[2] \n"))
             except:
                 user_diameter = 2
-            print("\nYour decoded string:\n" + scytale_decode(user_string, user_diameter) + "\n")
+            print(f"\nYour {mode[user_input]} string:\n" + scytale_decode(user_string, user_diameter) + "\n")
 
 
 def welcome_user():
