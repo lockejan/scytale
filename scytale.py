@@ -2,7 +2,6 @@ import pyfiglet
 from math import ceil
 
 def scytale_process(input, diameter):
-    input = str(input)
     out = str()
 
     for y in range(0,diameter):
