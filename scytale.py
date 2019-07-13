@@ -1,5 +1,5 @@
 import pyfiglet
-import math
+from math import ceil
 
 def scytale_encode(input, diameter):
     input = str(input)
@@ -15,7 +15,7 @@ def scytale_decode(input, diameter):
     input = str(input)
     out = str()
 
-    diameter = math.ceil(len(input)/diameter)
+    diameter = ceil(len(input)/diameter)
 
     for y in range(0,diameter):
         out += input[y::diameter]
@@ -24,9 +24,9 @@ def scytale_decode(input, diameter):
 
 
 def main_menu(user_input, menu):
-    mode = ["encoded", "decoded"] 
+    mode = ["encoded", "decoded"]
 
-    while user_input !=2:
+    while True:
         print(menu)
         try:
             user_input = int(input("Enter your selection:[0] \n"))
