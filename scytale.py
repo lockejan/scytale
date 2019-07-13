@@ -17,7 +17,7 @@ def scytale_init(input, diameter, mode):
     return scytale_process(input, diameter)
 
 
-def main_menu(user_input, menu):
+def main_menu(menu):
     mode = ["encoded", "decoded"]
 
     while True:
@@ -53,7 +53,7 @@ def welcome_user():
     [2] I wanna go to Rio (exit)\n"""
 
     print(entry_banner)
-    main_menu(0, menu)
+    main_menu(menu)
     return print(pyfiglet.figlet_format("\nCya next time! Bye!", font='digital'))
 
 
