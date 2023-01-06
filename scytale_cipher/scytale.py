@@ -4,7 +4,8 @@ from math import ceil
 
 
 def scytale_process(input: str, diameter: int) -> str:
-    """process encoding or decoding of a string.
+    """
+    process encoding or decoding of a string.
 
     :input: user input string
     :diameter: user diameter or default
@@ -20,7 +21,8 @@ def scytale_process(input: str, diameter: int) -> str:
 
 
 def scytale_init(input: str, diameter: int, mode: int) -> str:
-    """prepare process of scytale mode
+    """
+    prepare process of scytale mode
 
     :input: user input string
     :diameter: user diameter or default
@@ -36,7 +38,8 @@ def scytale_init(input: str, diameter: int, mode: int) -> str:
 
 
 def main_menu(menu: str) -> None:
-    """cli-wizard menu loop
+    """
+    cli-wizard menu loop
 
     :menu: menu prompt string
 
@@ -48,7 +51,7 @@ def main_menu(menu: str) -> None:
         user_input = input("Enter your selection:[0] \n")
         try:
             user_input = int(user_input)
-        except:
+        except ValueError:
             if user_input not in ["", "0"]:
                 print(
                     f"\n'{user_input}' is not a number. Continuing with 0.\n")
@@ -64,7 +67,7 @@ def main_menu(menu: str) -> None:
             user_diameter = input("\nPlease enter a diameter:[2] \n")
             try:
                 user_diameter = int(user_diameter)
-            except:
+            except ValueError:
                 if user_input not in ["", "2"]:
                     print(
                         f"\n'{user_diameter}' is not a number. Continuing with 2.\n"
