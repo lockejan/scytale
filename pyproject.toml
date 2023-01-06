@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "scytale-cli"
+name = "scytale-cipher"
 packages = [
-    { include = "scytale_cli"},
+    { include = "scytale_cipher"},
 ]
 version = "0.1.0"
 description = "Scytale cipher algorithm cli tool"

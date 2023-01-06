@@ -25,6 +25,8 @@
         packages = with pkgs; [
           # creates and enters a poetry environment
           (poetry2nix.mkPoetryEnv { projectDir = ./.; })
+          python3
+          sphinx
         ];
       };
 

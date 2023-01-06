@@ -7,6 +7,7 @@ pkgs.mkShell {
   buildInputs = [
     pkgs.python310Full
     pkgs.poetry
+    pkgs.sphinx
   ];
 
 }
