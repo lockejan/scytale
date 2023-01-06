@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 import pyfiglet
 from math import ceil
 
@@ -13,7 +15,7 @@ def scytale_process(input, diameter):
 def scytale_init(input, diameter, mode):
     input = str(input)
     if mode == 1:
-        diameter = ceil(len(input)/diameter)
+        diameter = ceil(len(input) / diameter)
     return scytale_process(input, diameter)
 
 
@@ -27,7 +29,8 @@ def main_menu(menu):
             user_input = int(user_input)
         except:
             if user_input not in ["", "0"]:
-                print(f"\n'{user_input}' is not a number. Continuing with 0.\n")
+                print(
+                    f"\n'{user_input}' is not a number. Continuing with 0.\n")
             user_input = 0
 
         if user_input == 2:
@@ -43,7 +46,8 @@ def main_menu(menu):
             except:
                 if user_input not in ["", "2"]:
                     print(
-                        f"\n'{user_diameter}' is not a number. Continuing with 2.\n")
+                        f"\n'{user_diameter}' is not a number. Continuing with 2.\n"
+                    )
                 user_diameter = 2
             print(f"\nYour {mode[user_input]} string:\n '" +
                   scytale_init(user_string, user_diameter, user_input) + "'\n")
@@ -56,10 +60,15 @@ def welcome_user():
     [1] Decode a given string\n
     [2] I wanna go to Rio (exit)\n"""
 
+    return menu, entry_banner
+
+
+def main():
+    entry_banner, menu = welcome_user()
     print(entry_banner)
     main_menu(menu)
-    return print(pyfiglet.figlet_format("\nCya next time! Bye!", font='digital'))
+    print(pyfiglet.figlet_format("\nCya next time! Bye!", font='digital'))
 
 
 if __name__ == '__main__':
-    welcome_user()
+    main()

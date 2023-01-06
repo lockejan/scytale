@@ -1,5 +1,5 @@
 import unittest
-from scytale import scytale_init
+from scytale.scytale import scytale_init
 
 class scytaleTests(unittest.TestCase):
     def test_equal_io_encode(self):
@@ -52,7 +52,7 @@ class scytaleTests(unittest.TestCase):
             (scytale_init("", 6, 0)),
             ""
         )
-    
+
     def test_numeric_input_encode(self):
         """numeric inputs should be treated as strings"""
         self.assertEqual(
@@ -61,7 +61,7 @@ class scytaleTests(unittest.TestCase):
         )
 
     def test_equal_io_decode(self):
-        """the length of the character sequence shouldn't change during decoding"""        
+        """the length of the character sequence shouldn't change during decoding"""
         self.assertEqual(
             len(scytale_init("hallo sipgate", 1, 1)),
             len("hallo sipgate")
@@ -91,14 +91,14 @@ class scytaleTests(unittest.TestCase):
             (scytale_init("hwaelllto! ", 6, 1)),
             "hallo welt!"
         )
-    
+
     def test_null_seq_decode(self):
         """no input shouldn't break the decoding"""
         self.assertEqual(
             (scytale_init("", 6, 1)),
             ""
         )
-    
+
     def test_numeric_input_decode(self):
         """numeric inputs should be treated as strings"""
         self.assertEqual(
