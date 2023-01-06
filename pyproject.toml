@@ -23,7 +23,6 @@ include = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pyfiglet = "^0.7"
 
 [tool.poetry.scripts]
 scytale = 'scytale.scytale:main'

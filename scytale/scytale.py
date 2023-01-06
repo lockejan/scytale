@@ -1,6 +1,5 @@
 #! /usr/bin/env python
 
-import pyfiglet
 from math import ceil
 
 
@@ -53,21 +52,19 @@ def main_menu(menu):
                   scytale_init(user_string, user_diameter, user_input) + "'\n")
 
 
-def welcome_user():
-    entry_banner = pyfiglet.figlet_format("Scytale", font='isometric1')
+def menu_entries():
     menu = """What do you wanna do?\n
     [0] Encode a given string (default)\n
     [1] Decode a given string\n
     [2] I wanna go to Rio (exit)\n"""
 
-    return menu, entry_banner
+    return menu
 
 
 def main():
-    entry_banner, menu = welcome_user()
-    print(entry_banner)
+    menu = menu_entries()
     main_menu(menu)
-    print(pyfiglet.figlet_format("\nCya next time! Bye!", font='digital'))
+    print("\nCya next time! Bye!")
 
 
 if __name__ == '__main__':
