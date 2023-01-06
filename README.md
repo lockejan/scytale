@@ -1,5 +1,7 @@
 # Scytale
 
+[![codecov](https://codecov.io/gh/lockejan/scytale/branch/main/graph/badge.svg?token=IVZBSROEKF)](https://codecov.io/gh/lockejan/scytale)
+
 Just a very simple python script to calculate the scytale-cipher through an cli-wizard.
 
 It also includes some tooling to build, publish and develop with Nix and Poetry.
