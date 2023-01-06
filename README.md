@@ -1,10 +1,15 @@
 # Scytale
 
-[![codecov](https://codecov.io/gh/lockejan/scytale/branch/main/graph/badge.svg?token=IVZBSROEKF)](https://codecov.io/gh/lockejan/scytale)
-
 Just a very simple python script to calculate the scytale-cipher through an cli-wizard.
 
-It also includes some tooling to build, publish and develop with Nix and Poetry.
+The projects main purpose is to showcase interesting tooling to build, publish and develop python apps.
+
+## Code Status
+
+[![CI](https://github.com/lockejan/scytale/actions/workflows/branch.yml/badge.svg?branch=main)](https://github.com/lockejan/scytale/actions/workflows/branch.yml)
+[![codecov](https://codecov.io/gh/lockejan/scytale/branch/main/graph/badge.svg?token=IVZBSROEKF)](https://codecov.io/gh/lockejan/scytale)
+
+Code documentation: https://scytale.readthedocs.io
 
 ## Description
 
@@ -33,7 +38,7 @@ In this example, the cipher text is
 pvmwnreergo  o!
 ```
 
-## Prerequisites And Usage
+## Setup
 
 ### Using Nix
 
