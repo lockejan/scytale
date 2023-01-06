@@ -1,5 +1,5 @@
 import unittest
-from scytale.scytale import scytale_init
+from scytale_cipher.scytale import scytale_init
 
 
 class scytaleTests(unittest.TestCase):
