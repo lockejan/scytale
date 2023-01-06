@@ -3,15 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Scytale Cipher CLI's documentation!
+Welcome to Scytale Cipher's documentation!
 ==============================================
 
 .. automodule:: scytale_cipher
     :members:
-.. .. toctree::
-..    :maxdepth: 2
-..    :caption: Contents:
-
 
 
 Indices and tables

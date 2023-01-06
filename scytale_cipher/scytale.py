@@ -39,7 +39,7 @@ def scytale_init(input: str, diameter: int, mode: int) -> str:
 
 def main_menu(menu: str) -> None:
     """
-    cli-wizard menu loop
+    enters the cli-wizard menu loop
 
     :menu: menu prompt string
 
