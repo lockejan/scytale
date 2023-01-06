@@ -3,7 +3,15 @@
 from math import ceil
 
 
-def scytale_process(input, diameter):
+def scytale_process(input: str, diameter: int) -> str:
+    """process encoding or decoding of a string.
+
+    :input: user input string
+    :diameter: user diameter or default
+
+    :returns: with scytale encoded string
+
+    """
     out = str()
 
     for y in range(0, diameter):
@@ -11,14 +19,28 @@ def scytale_process(input, diameter):
     return out
 
 
-def scytale_init(input, diameter, mode):
+def scytale_init(input: str, diameter: int, mode: int) -> str:
+    """prepare process of scytale mode
+
+    :input: user input string
+    :diameter: user diameter or default
+    :mode: bool to predict if input has to be encoded or decoded
+
+    :returns: encoded or decoded string
+
+    """
     input = str(input)
     if mode == 1:
         diameter = ceil(len(input) / diameter)
     return scytale_process(input, diameter)
 
 
-def main_menu(menu):
+def main_menu(menu: str) -> None:
+    """cli-wizard menu loop
+
+    :menu: menu prompt string
+
+    """
     mode = ["encoded", "decoded"]
 
     while True:
@@ -52,7 +74,7 @@ def main_menu(menu):
                   scytale_init(user_string, user_diameter, user_input) + "'\n")
 
 
-def menu_entries():
+def menu_entries() -> str:
     menu = """What do you wanna do?\n
     [0] Encode a given string (default)\n
     [1] Decode a given string\n
@@ -61,7 +83,7 @@ def menu_entries():
     return menu
 
 
-def main():
+def main() -> None:
     menu = menu_entries()
     main_menu(menu)
     print("\nCya next time! Bye!")
