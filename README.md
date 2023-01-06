@@ -56,4 +56,4 @@ At least Poetry needs to be installed.
 
 - `poetry shell` (activates and enters the virtual environment)
 
-- `poetry run python -m unittest discover` (runs all tests)
+- `poetry run python -m unittest discover` (runs all tests). Alternatively `poetry run python -m pytest tests` to use pytest for test execution.
