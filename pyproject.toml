@@ -3,7 +3,7 @@ name = "scytale-cipher"
 packages = [
     { include = "scytale_cipher"},
 ]
-version = "0.1.1"
+version = "0.1.2"
 description = "Scytale cipher algorithm cli tool"
 authors = ["Jan Schmitt <git@smittie.de>"]
 maintainers = ["Jan Schmitt <git@smittie.de>"]
