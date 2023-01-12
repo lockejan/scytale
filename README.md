@@ -11,6 +11,8 @@ The projects main purpose is to showcase interesting tooling to build, publish a
 
 Code documentation: https://scytale.readthedocs.io
 
+Pypi registry: https://pypi.org/project/scytale-cipher
+
 ## Description
 
 The scytale was used more than 2500 years ago by the Spartans, and is one example of ancient cryptography.
