@@ -46,8 +46,8 @@ jobs:
         run: poetry install
       - name: Run yapf
         run: poetry run yapf -ir .
-      - name: Run flake8
-        run: poetry run flake8 .
+      - name: Run ruff
+        run: poetry run ruff .
       - name: Run bandit
         run: poetry run bandit .
       - name: Run saftey
