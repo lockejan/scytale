@@ -47,7 +47,7 @@ jobs:
       - name: Run yapf
         run: poetry run yapf -ir .
       - name: Run ruff
-        run: poetry run ruff .
+        run: poetry run ruff check .
       - name: Run bandit
         run: poetry run bandit .
       - name: Run saftey
