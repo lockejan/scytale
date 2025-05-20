@@ -72,6 +72,19 @@ class scytaleTests(unittest.TestCase):
         """numeric inputs should be treated as strings"""
         self.assertEqual((scytale_init(2, 6, 1)), "2")
 
+    def test_invalid_diameter(self):
+        """diameter less than one should raise"""
+        with self.assertRaises(ValueError):
+            scytale_init("abc", 0, 0)
+        with self.assertRaises(ValueError):
+            scytale_init("abc", -1, 1)
+
+    def test_decode_non_multiple_diameter(self):
+        """decoding should work for sequences not divisible by diameter"""
+        encoded = scytale_init("hello world", 5, 0)
+        self.assertEqual(encoded, "h dewlolrol")
+        self.assertEqual(scytale_init(encoded, 5, 1), "hello world")
+
 
 if __name__ == "__main__":
     unittest.main()
