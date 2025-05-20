@@ -36,7 +36,7 @@ pytest-cov = "4.0.0"
 bandit = "1.7.4"
 safety = "2.3.5"
 yapf = "0.32.0"
-ruff = "0.0.247"
+ruff = "0.11.8"
 
 [tool.yapfignore]
 ignore_patterns = [
