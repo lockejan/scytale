@@ -32,8 +32,30 @@ def scytale_init(input: str, diameter: int, mode: int) -> str:
 
     """
     input = str(input)
+    if diameter < 1:
+        raise ValueError("diameter must be at least 1")
     if mode == 1:
-        diameter = ceil(len(input) / diameter)
+        # decoding path
+        n = len(input)
+        rows = ceil(n / diameter)
+        remainder = n % diameter
+        if remainder == 0:
+            remainder = diameter
+
+        columns = []
+        index = 0
+        for col in range(diameter):
+            length = rows if col < remainder else rows - 1
+            columns.append(input[index:index + length])
+            index += length
+
+        out = ""
+        for row in range(rows):
+            for col in range(diameter):
+                if row < len(columns[col]):
+                    out += columns[col][row]
+        return out
+
     return scytale_process(input, diameter)
 
 
@@ -67,10 +89,12 @@ def main_menu(menu: str) -> None:
             user_diameter = input("\nPlease enter a diameter:[2] \n")
             try:
                 user_diameter = int(user_diameter)
+                if user_diameter < 1:
+                    raise ValueError
             except ValueError:
-                if user_input not in ["", "2"]:
+                if user_diameter not in ["", "2"]:
                     print(
-                        f"\n'{user_diameter}' is not a number. Continuing with 2.\n"
+                        f"\n'{user_diameter}' is not a valid diameter. Continuing with 2.\n"
                     )
                 user_diameter = 2
             print(f"\nYour {mode[user_input]} string:\n '" +
