@@ -5,8 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  lint:
-    name: Run Ruff
+  check-flake:
     runs-on: macos-14
 
     steps:
