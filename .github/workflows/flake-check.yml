@@ -15,11 +15,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Nix
-        uses: cachix/install-nix-action@v27
-        with:
-          extra_nix_config: |
-            experimental-features = nix-command flakes
+      - uses: cachix/install-nix-action@v31
 
       - name: Run Ruff via nix develop shell
         run: |
