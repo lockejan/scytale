@@ -1,0 +1,37 @@
+name: Weekly flake.lock update
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: macos-14
+    steps:
+
+    - uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - uses: cachix/install-nix-action@v31
+
+    - name: Update flake.lock
+      run: nix flake update
+      shell: bash
+
+    - name: Run Ruff via nix develop shell as smoke test
+      run: |
+        nix develop --command ruff check .
+
+    - name: Set up git identity
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Commit and push flake.lock if changed
+      run: |
+          git add flake.lock
+          git commit -m "chore: Update flake inputs"
+          git push origin main
+      shell: bash
