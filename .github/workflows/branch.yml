@@ -35,20 +35,27 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+
       - uses: actions/setup-python@7f4fc3e22c37d6ff65e88745f38bd3157c663f7c # v4
         with:
           python-version: ${{ matrix.python-version }}
+
       - name: Run image
         uses: abatilo/actions-poetry@a5643c67b5fcc9ac5eddb395c7f61b1b66d86034 # v2
         with:
           poetry-version: ${{ matrix.poetry-version }}
+
       - name: Install dependencies
         run: poetry install
+
       - name: Run yapf
         run: poetry run yapf -ir .
+
       - name: Run ruff
-        run: poetry run ruff check .
+        uses: astral-sh/ruff-action@v3
+
       - name: Run bandit
         run: poetry run bandit .
+
       - name: Run saftey
         run: poetry run safety check
