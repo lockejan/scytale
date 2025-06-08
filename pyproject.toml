@@ -35,7 +35,7 @@ pytest = "7.4.4"
 pytest-cov = "4.1.0"
 bandit = "1.8.3"
 safety = "2.3.5"
-yapf = "0.32.0"
+yapf = "0.43.0"
 # ruff = "0.1.13"
 toml = "0.10.2"
 
