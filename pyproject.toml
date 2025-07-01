@@ -33,7 +33,7 @@ scytale = 'scytale_cipher.scytale:main'
 [tool.poetry.group.dev.dependencies]
 pytest = "8.4.0"
 pytest-cov = "6.2.1"
-bandit = "1.8.3"
+bandit = "1.8.5"
 safety = "2.3.5"
 yapf = "0.43.0"
 # ruff = "0.1.13"
