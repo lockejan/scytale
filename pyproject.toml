@@ -31,7 +31,7 @@ python = "^3.10"
 scytale = 'scytale_cipher.scytale:main'
 
 [tool.poetry.group.dev.dependencies]
-pytest = "8.4.0"
+pytest = "8.4.1"
 pytest-cov = "6.2.1"
 bandit = "1.8.5"
 safety = "2.3.5"
